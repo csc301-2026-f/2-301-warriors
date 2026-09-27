@@ -1,4 +1,4 @@
-# YOUR PRODUCT/TEAM NAME
+# 301 Warriors
 > _Note:_ This document will evolve throughout your project. You commit regularly to this file while working on the project (especially edits/additions/deletions to the _Highlights_ section). 
  > **This document will serve as a master plan between your team, your partner and your TA.**
 
@@ -21,20 +21,29 @@
 
 #### Q2: Who are your target users?
 
-  > Short (1 - 2 min' read max)
- * Be specific (e.g. a 'a third-year university student taking CSC301 and studying Computer Science' and not 'a student')
- * **Feel free to use personas. You can create your personas as part of this Markdown file, or add a link to an external site (for example, [Xtensio](https://xtensio.com/user-persona/)).**
+Our target users are Cineplex customers who want a more convenient, personalized way to book movie tickets without manually navigating the traditional booking process.
+
+**Persona 1: The Routine Moviegoer**
+
+A customer who watches movies regularly and has established preferences for theatres, showtimes, seating, and payment methods. They want Savi AI to remember these preferences and automate recurring movie bookings, making it easier to maintain their moviegoing routine.
+
+**Persona 2: The Convenience-Focused Customer**
+
+A customer who enjoys watching movies but has limited time to browse theatres, compare showtimes, select seats, and complete checkout. They want to make a simple request through the mobile app, such as booking two tickets for a particular movie at a nearby theatre, and have the AI concierge handle the booking process.
+
+While routine moviegoers benefit from personalized, recurring automation, occasional moviegoers benefit from a simpler, faster way to book individual outings.
 
 #### Q3: Why would your users choose your product? What are they using today to solve their problem/need?
 
-> Short (1 - 2 min' read max)
- * We want you to "connect the dots" for us - Why does your product (as described in your answer to Q1) fits the needs of your users (as described in your answer to Q2)?
- * Explain the benefits of your product explicitly & clearly. For example:
-    * Save users time (how and how much?)
-    * Allow users to discover new information (which information? And, why couldn't they discover it before?)
-    * Provide users with more accurate and/or informative data (what kind of data? Why is it useful to them?)
-    * Does this application exist in another form? If so, how does your differ and provide value to the users?
-    * How does this align with your partner's organization's values/mission/mandate?
+Today, Cineplex customers typically use the Cineplex website or mobile app to manually select a theatre, movie, showtime, number of tickers, seats, and payment method. While this works for individual bookings, the process can become repetitive for customers who watch movies regularly or already know their preferences.
+
+**Savi AI** provides an alternative through an AI-powered concierge that allows users to describe what they want in a simple request. Instead of navigating each step themselves, users can ask Savi to book a movie based on their preferences, while the system handles theatre selection, showtime selection, seat selection, and checkout.
+
+The main benefits are **convenience, personalization, and automation**. Savi can remember preferences such as preferred theatres, seating, and payment methods, reducing repeated inputs and the number of manual steps required for future bookings. For routine moviegoers, recurring bookings can further reduce the effort required to plan regular movie outings. For individual bookings, users can make a request without manually navigating through multiple booking screens.
+
+While Cineplex already provides a digital booking experience, Savi differs by introducing a **conversational AI interface and autonomous booking process**. Rather than requiring users to operate the interface themselves, Savi is designed to carry out the booking on their behalf and allow users to view the booking and follow the agent's progress through the mobile application.
+
+This approach supports our partner's goal of exploring how **AI agents can move beyond traditional interfaces and automate everyday tasks**, while providing Cineplex customers with a more seamless way to book and manage their movie experiences.
 
 #### Q4: What are the user stories that make up the Minumum Viable Product (MVP)?
 
