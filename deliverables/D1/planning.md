@@ -75,6 +75,8 @@ This approach supports our partner's goal of exploring how **AI agents can move 
 
 Briefly describe which option you have agreed to.
 
+Our partner has agreed that we may share the work our team creates for this project, including our code and software. We will not share code created by the partner or other contributors unless they give us permission.
+
 ----
 
 ## Teamwork Details
