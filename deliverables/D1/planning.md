@@ -111,7 +111,11 @@ Describe meetings (and other events) you are planning to have.
  * You should have 2 meetings with your project partner (if you have one) before D1 is due. Describe them here:
    * You must keep track of meeting minutes and add them to your repo under "deliverables/minutes" folder
    * You must have a regular meeting schedule established for the rest of the term.  
-  
+
+Our team attends the online tutorial on Tuesdays to answer the TA’s questions and discuss our progress. We also meet online on Tuesdays from 6:30–7:00 p.m. for the team-building activity. After tutorial, we discuss the following week’s work, assign tasks, and identify any blockers.
+
+We meet with our project partner online every Wednesday from 10:40–11:00 p.m. to review user stories, get feedback, and agree on next steps. We will have two partner meetings before D1 is due; if needed, we will schedule an additional online meeting before the deadline. For the rest of the term, we will continue the weekly Wednesday schedule and arrange coding sessions or code reviews as needed. We will record minutes for each partner meeting in deliverables/minutes.
+
 #### Q9: How will you organize your team?
 
 List/describe the artifacts you will produce to organize your team. (We strongly recommend that you use standard collaboration tools like Linear.app, Jira, Slack, Discord, GitHub.)       
