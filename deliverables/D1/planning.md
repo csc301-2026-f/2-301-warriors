@@ -110,10 +110,12 @@ List/describe the artifacts you will produce to organize your team. (We strongly
 #### Q10: What are the rules regarding how your team works?
 
 **Communications:**
+
 Our team meets approximately 1–2 times per week, usually through Google Meet, to discuss our progress, upcoming tasks, blockers, and next steps. We use Discord as our primary method of internal communication for updates, questions, reminders, and coordination between meetings.
 For communication with our partner, we use Slack, where we have a shared group chat. The team representative is primarily responsible for broader communication with the partner, such as scheduling meetings, confirming decisions, and discussing project-wide questions. However, individual team members may contact the partner directly when they have specific technical or task-related questions.
  
 **Collaboration:**
+
 All team members are expected to attend scheduled tutorial meetings. For internal team meetings and partner meetings, members should avoid missing more than one meeting consecutively unless there is a valid reason. We believe regular communication and frequent check-ins are important for keeping everyone aligned and ensuring that issues are identified early.
 
 Team members are also expected to complete their assigned tasks by the agreed deadlines and communicate early if they are unable to do so. If a team member becomes unresponsive or repeatedly fails to complete assigned work, the team representative will first contact them through Discord, our primary communication channel. If there is still no response, we will attempt to reach them by email.
