@@ -1,15 +1,25 @@
-# YOUR PRODUCT/TEAM NAME
+# 301 Warriors
 ​
 > _Note:_ This document is intended to be relatively short. Be concise and precise. Assume the reader has no prior knowledge of your application and is non-technical. 
 ​
 ## Partner Intro
- * Include the names, emails, titles, primary or secondary point of contact at the partner organization
- * Provide a short description about the partner organization. (2-4 lines)
+**Partner Organization**: Savi Finance
+
+**Primary Point of Contact**: 
+ * Name: Ralph Maamari
+ * Email: ralphpalxyz@gmail.com
+ * Title: Co-founder and CEO of Savi Finance
+ * Role: Primary Point of Contact
+
+**About the Partner Organization**:
+
+Savi Finance is a Toronto-based personal finance technology company focused on helping people take control of their financial future. Its platform brings financial accounts, spending insights, goals, and planning tools together in one place, with AI-powered features designed to make financial management simpler and more accessible.
 
 ## Description about the project
-Keep this section very brief.
- * Provide a high-level description of your application and it's value from an end-user's perspective
- * What is the problem you're trying to solve? Is there any context required to understand **why** the application solves this problem?
+
+Our project introduces an AI-powered Cineplex booking concierge as a new feature within Savi Finance. Users can request movie tickets through a conversational interface, while the AI agent handles the booking process based on their preferences.
+
+The feature addresses the repetitive and time-consuming nature of traditional movie booking by reducing the need to manually navigate through theatres, showtimes, seat selection, and checkout.
 ​
 ## Key Features
  * Describe the key features in the application that the user can access.
