@@ -6,17 +6,29 @@
  
 #### Q1: What is the product?
 
- > Short (1 - 2 min' read)
- * Start with a single sentence, high-level description of the product.
- * Be clear - Describe the problem you are solving in simple terms.
- * Specify if you have a partner, who they are (role/title), and the organization information.
- * Be concrete. For example:
-    * What are you planning to build? Is it a website, mobile app, browser extension, command-line app, etc.?      
-    * When describing the problem/need, give concrete examples of common use cases.
-    * Assume the reader knows nothing about the partner or the problem domain and provide the necessary context. 
- * Focus on *what* your product does, and avoid discussing *how* you're going to implement it.      
-   For example: This is not the time or the place to talk about which programming language and/or framework you are planning to use.
- * **Feel free (and very much encouraged) to include useful diagrams, mock-ups and/or links**.
+We are building Savi AI, a mobile app (iOS and Android) where you can ask Savi, an AI assistant, to find and book movie tickets at any Cineplex theatre for you, either once or automatically every week.
+
+Now, what is the problem that we’re trying to solve? Booking a movie ticket is not hard, but it is repetitive. Think about someone who goes to the movies with a friend every Tuesday. Every week, they open the Cineplex app or website, pick the same theatre, scroll through the movies, choose a format and showtime, find two seats together, pick a payment method, and check out. It only takes a few minutes, but it is the same few minutes every single week, and most of the choices never change.
+
+We think this process should take zero thought. You should be able to say what you want once, and have it handled for you.
+
+We are working with Savi Finance and helping develop/create this AI agentic system for them, the project is the Cineplex Movie Booking AI Concierge Agent.
+
+What does the product do, and moreso, how does it work? Savi AI lets users book movies by simply asking for them in a chat. Behind the scenes, Savi goes through the Cineplex booking process on the user's own account: it picks the theatre, the movie, the seats, and the payment method, pays for the tickets, and lets the user know when the booking is done. Users can follow along in the app while Savi works, and can step in to change anything they want.
+
+The app has two main modes:
+1. One-Time Ticket Mode: The user asks for something like "Buy me 2 tickets to a premium action movie tonight." Savi recommends a theatre and a few movies, and the user can adjust the number of seats or split the bill with friends before picking a showtime and seats.
+2. Auto-Book Routine: The user sets up a weekly routine (for example, every Tuesday). Each week, Savi finds the best seats for them and asks for a quick approval before paying. The user can approve it, skip the week, or change the format, showtime, or seats.
+
+![Ticket Modes](ticket-modes.png)
+
+Below, I’ll list some common use cases of our project:
+- A couple who sees a movie every Tuesday night and wants the same theatre, format, and seats booked automatically each week.
+- A group of friends who want to go to a movie tonight, and want to split the cost without one person paying and chasing everyone for money.
+- Someone who just knows the kind of movie they want to see (for example, "something action in IMAX") and does not want to browse showtimes themselves.
+
+Finally, why does this really matter? Beyond saving time for movie-goers, this project is a small look at where apps may be heading: instead of navigating menus and forms, users just say what they want, and an AI agent takes care of the rest.
+
 
 
 #### Q2: Who are your target users?
@@ -151,14 +163,18 @@ We are also eager to put in our time to learn new concepts and frameworks requir
 ## Potential Risks
 
 #### Q13. What are some potential risks to your project?
-* Now that you have defined your project, what risks can you identify that might impact it?
-* Some examples of risks at this planning stage could include:
-  * Uncertainties regarding a specific feature
-  * Misaligned expectations or conflicts
-  * Lack of clarity in execution or decision-making
-  * Limited access to data, systems, or other dependencies
-  * User stories that are too abstract or too simple
-* For each risk, provide a brief bullet point and then explain the risk in detail. 
+
+1. ***The Cineplex website could change or block automated booking.***
+   Savi books tickets by going through the Cineplex website the same way a person would. That means our product depends on a website we don't control. If Cineplex changes its layout, adds a CAPTCHA, or starts detecting and blocking automated visits, the booking flow could break without warning. We also need to confirm with our partner that booking this way is allowed under Cineplex's terms of use, since that affects whether the product can safely launch.
+
+2. ***We are building on code we did not write.***
+   The project continues an existing prototype that is described as about halfway done and well tested. That is a big head start, but it also means we need time to understand someone else's code and decisions before we can build on them. If the existing code is harder to work with than expected, or has gaps we don't know about yet, it could slow down the parts we are responsible for.
+
+3. ***Letting an AI agent pay is risky.***
+   Most bugs in an app are annoying. A bug here could charge someone for the wrong movie, the wrong number of seats, or book twice. Payment is also the part of the project that is newest to us (including the HTTP 402 "Payment Required" flow), and checkouts often include extra verification steps like a bank confirmation screen that an agent may not be able to get through on its own. On top of that, Savi works on the user's own Cineplex account, so it needs access to their login and saved payment methods.
+
+4. ***The right theatre, movie, and seats are not clearly defined.***
+   The expected features say the system should pick the right theatre, movie, seats, and payment method. But what counts as "right" is open to interpretation. If a user asks for "a premium action movie tonight," does that mean IMAX or UltraAVX? What if their usual seats are taken, or the showtime is sold out? If we don't pin these down with our partner, our user stories may end up too vague to build or test, and the result may not match what our partner had in mind.
 
 #### Q14. What are some potential mitigation strategies for the risks you identified?
 * Examples of mitigation strategies:
