@@ -71,10 +71,21 @@ Our partner has agreed that we may share the work our team creates for this proj
 
 #### Q6: Have you met with your team?
 
-Do a team-building activity in-person or online. This can be playing an online game, meeting for bubble tea, lunch, or any other activity you all enjoy.
-* Get to know each other on a more personal level.
-* Provide a few sentences on what you did and share a picture or other evidence of your team building activity.
-* Share at least three fun facts from members of you team (total not 3 for each member).
+Yes, we have met each other!
+
+For our team-building activity, we decided to meet up online and play a competitive drawing game called Skribbl.io. We played two rounds, where each person took turns drawing different words while the rest of us tried to guess the word. It was a very fun way to get to know each other outside of our project responsibilities, learn more about one another, and bring out our competitive spirits. 
+
+Here is the leaderboard at the end of our game. Although everyone tried their best to win, Jeremy came out on top and stood first place!
+
+![Skribbl.io leaderboard](image.png)
+
+**Fun-facts!**
+
+* Akram is a big Mario fan and enjoys the Super Mario games and characters.
+* Tarun grew up watching Pokémon, making it one of the shows he remembers fondly from his childhood.
+* Zainab is a coffee lover and enjoys having coffee as part of her daily routine.
+* Aadya loves watching sitcoms and her favorite one is Modern Family 
+
 
 
 #### Q7: What are the roles & responsibilities on the team?
@@ -124,9 +135,11 @@ If the issue continues, it will be documented in the individual feedback require
 ## Organisation Details
 
 #### Q11. How does your team fit within the overall team organisation of the partner?
-* Given the team structure of your partner, what role do you think your team will play?
-* Examples include product development that includes developing new features, or quality assurance that includes developing features that test the product reliability, or software maintenance that includes fixing crucial bugs in the product.
-* Provide examples of why you think you fit this role.
+Given the current team structure of our partner, our team will contribute mainly towards the Product Development of the Cineplex AI Concierge service. Our main task would be to build on the existing codebase and complete the end-to-end implementation of the Booking and AI Payment System that is to be offer through this service.
+	
+We are fit for this role due to our prior technical experience and eagerness to learn. Team members have previously worked with full-stack projects, AI integrations through LLM APIs, RAG, prompt engineering, NLP, and machine learning and developed applications with tools like TypeScript, React/Next.js, Python, REST APIs, PostgreSQL, and Docker. We have also taken courses like CSC311 and CSC309 which have further strengthened our technical capabilities. This gives us a strong foundation for working across the different components of the Cineplex AI Concierge 
+
+We are also eager to put in our time to learn new concepts and frameworks required for this project such as browser automation, secure agentic payment, Go, React Native and apply our existing experience to working with the partner's codebase. By combining our existing knowledge and new technologies, we believe we would be able to help deliver a seamless, reliable, and production-ready booking experience.
 
 #### Q12. How does your project fit within the overall product from the partner?
 * Look at the big picture of the product and think about how your project fits into this product.
