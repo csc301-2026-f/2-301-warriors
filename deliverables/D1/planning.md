@@ -66,6 +66,8 @@ This approach supports our partner's goal of exploring how **AI agents can move 
 
 #### Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.
 
+> 🚧 **Draft — not final.** Starting point only, please review and edit before we submit.
+
 Our partner has specified the preferred technology stack for this project:
 
 - **Backend:** Go
