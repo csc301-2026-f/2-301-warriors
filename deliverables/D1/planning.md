@@ -66,11 +66,20 @@ This approach supports our partner's goal of exploring how **AI agents can move 
 
 #### Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.
 
-> Short (1-2 min' read max)
- * What is the technology stack? Specify languages, frameworks, libraries, PaaS products or tools to be used or being considered. 
- * How will you deploy the application?
- * Describe the architecture - what are the high level components or patterns you will use? Diagrams are useful here. 
- * Will you be using third party applications or APIs? If so, what are they?
+Our partner has specified the preferred technology stack for this project:
+
+- **Backend:** Go
+- **Frontend:** React Native with TypeScript and styled-components, for a shared iOS/Android codebase
+- **Development tooling:** Claude, Codex, and Cursor as AI-assisted coding tools throughout the project
+
+Since we are continuing an existing, partly-built prototype rather than starting from scratch, our architecture decisions build on what the partner has already set up. The remaining components we are responsible for are:
+
+- **Web browser traversal & payment:** Automating the Cineplex booking flow (theatre, movie, showtime, seat, and payment selection) on the user's behalf. Since our backend is in Go, we are considering browser automation libraries that integrate natively with Go (e.g., driving headless Chrome via the Chrome DevTools Protocol) rather than introducing a separate automation service in another language.
+- **Mobile RAG integration:** Retrieving a user's stored preferences (preferred theatre, seat type, price range, genre, booking frequency) so the AI agent can make contextually appropriate decisions without the user re-specifying them each time.
+- **UI/Front-end:** Building the chat-based request flow, a live view of the agent's booking progress, and a confirmation step before any payment is made.
+- **Stretch goal:** Exploring the HTTP 402 "Payment Required" status code in the context of agent-conducted payments, to better understand emerging standards for AI agents handling payment flows autonomously.
+
+We have not yet finalized our exact deployment process or third-party dependencies beyond what the partner will provide, and will confirm these details with our partner as we get further into development.
 
 ----
 ## Intellectual Property Confidentiality Agreement 
@@ -154,11 +163,34 @@ We are fit for this role due to our prior technical experience and eagerness to 
 We are also eager to put in our time to learn new concepts and frameworks required for this project such as browser automation, secure agentic payment, Go, React Native and apply our existing experience to working with the partner's codebase. By combining our existing knowledge and new technologies, we believe we would be able to help deliver a seamless, reliable, and production-ready booking experience.
 
 #### Q12. How does your project fit within the overall product from the partner?
-* Look at the big picture of the product and think about how your project fits into this product.
-* Is your project the first step towards building this product? Is it the first prototype? Are you developing the frontend of a product whose backend is developed by the partner? Are you building the release pipelines for a product that is developed by the partner? Are you building a core feature set and take full ownership of these features?
-* You should also provide details of who else is contributing to what parts of the product, if you have this information. This is more important if the project that you will be working on has strong coupling with parts that will be contributed to by members other than your team (e.g., from a partner).
-* You can be creative for these questions and even use a graphical or pictorial representation to demonstrate the fit.
-* Briefly specify what your partner considers a success for this project. Do they want you to build specific features? Publish a usable product? Just a prototype? Be as specific as you can be at this point.
+
+Savi Finance's core product is a personal finance app that brings together connected accounts, spending insights, financial goals, and AI-powered planning tools in one place. The Cineplex AI Concierge is a new feature being added on top of that existing product — it is not a standalone app, and it is not the foundation the rest of Savi Finance is built on.
+
+```mermaid
+graph TD
+    A[Savi Finance App] --> B[Connected Accounts]
+    A --> C[Spending Insights]
+    A --> D[Financial Goals]
+    A --> E[AI Planning Tools]
+    A --> F[Cineplex AI Concierge]
+
+    F --> F1[Chat-based booking request]
+    F --> F2[Browser automation + payment]
+    F --> F3[One-time & auto-book modes]
+
+    style F fill:#f9d77e,stroke:#333,stroke-width:2px
+    style F1 fill:#fff,stroke:#999
+    style F2 fill:#fff,stroke:#999
+    style F3 fill:#fff,stroke:#999
+```
+
+*(the highlighted branch is our team's scope)*
+
+Our project is not the first prototype of this feature — Savi Finance already has an existing, partly-built implementation (described as roughly half complete and tested), covering the earlier modules of the booking flow. Our team is taking full ownership of completing the remaining core pieces: the web browser traversal payment section, mobile RAG integration for preference-based booking, and the UI/front-end, with a stretch goal of exploring agent-conducted payments (HTTP 402 flow).
+
+Our partner has confirmed that no other team is working on this feature in parallel — our team is the sole group responsible for completing the Cineplex AI Concierge this term.
+
+Unlike a typical course prototype, our partner intends to launch this feature directly to production after this term. They already have a group of users confirmed to use it weekly, so success for them is not just a working demo: it's a feature that is production-ready and reliable enough to launch, with the goal of expanding into similar AI-agent-driven experiences if it proves successful, or otherwise remaining live and supported for its existing user base.
 
 ## Potential Risks
 
