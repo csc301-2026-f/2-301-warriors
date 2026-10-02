@@ -6,7 +6,7 @@
  
 #### Q1: What is the product?
 
-We are building Savi AI, a mobile app (iOS and Android) where you can ask Savi, an AI assistant, to find and book movie tickets at any Cineplex theatre for you, either once or automatically every week.
+We are creating an extension to a pre-existing chatbot app (on iOS and Android) where you can ask Savi, an AI assistant, to find and book movie tickets at any Cineplex theatre for you, either once or automatically every week.
 
 Now, what is the problem that we’re trying to solve? Booking a movie ticket is not hard, but it is repetitive. Think about someone who goes to the movies with a friend every Tuesday. Every week, they open the Cineplex app or website, pick the same theatre, scroll through the movies, choose a format and showtime, find two seats together, pick a payment method, and check out. It only takes a few minutes, but it is the same few minutes every single week, and most of the choices never change.
 
