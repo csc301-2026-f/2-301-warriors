@@ -70,7 +70,7 @@ This approach supports our partner's goal of exploring how **AI agents can move 
 
 Our partner has specified the preferred technology stack for this project:
 
-- **Backend:** Go
+- **Backend:** Go 
 - **Frontend:** React Native with TypeScript and styled-components, for a shared iOS/Android codebase
 - **Development tooling:** Claude, Codex, and Cursor as AI-assisted coding tools throughout the project
 
@@ -112,16 +112,48 @@ Here is the leaderboard at the end of our game. Although everyone tried their be
 
 
 #### Q7: What are the roles & responsibilities on the team?
-
-Describe the different roles on the team and the responsibilities associated with each role (e.g., frontend, database). 
- * Roles should reflect the structure of your team and be appropriate for your project. One person may have multiple roles.  
+[NOT COMPLETE YET]
  * Add role(s) to your Team-[Team_Number]-[Team_Name].csv file on the main folder.
- * At least one person must be identified as the dedicated partner liaison. They need to have great organization and communication skills.
- * Everyone must contribute to code. Students who don't contribute to code enough will receive a lower mark at the end of the term.
 
-List each team member and:
- * A description of their role(s) and responsibilities including the components they'll work on and non-software related work
- * Why did you choose them to take that role? Specify if they are interested in learning that part, experienced in it, or any other reasons. Do no make things up. This part is not graded but may be reviewed later.
+The roles required for this project include:
+
+- **AI Agent** engineer: responsible for the agent's reasoning, conversation, tool use, and decision-making 
+
+- **Backend** developer: responsible for the APIs, databases, authentication, booking logic, and integrations 
+
+- **Frontend** developer: responsible for the chat interface, movie/showtime UI, seat selection, and booking experience
+
+- **AI QA & Testing** engineer: responsible for the testing whether the agent behaves correctly, safely, and reliably
+
+- **DevOps** engineer: responsible for the deployment, infrastructure, monitoring, and security  
+          
+- **Product/UX** engineer: responsible for user flows, requirements, interaction design, and making the booking experience intuitive 
+
+- **Payment/Security**: responsible for payments, authorization, security, and fraud prevention
+
+Based on these descriptions, this is how we chose to assign each of our roles, given either our knowldge, exprience, and interest in the role:
+
+**Akram**: *Backend, AI Testing, and AI agents*
+- **Reason**: Has experience working on apps with React, Express, Node.js, and MongoDB. Has a solid understanding of AI and willing to learn how to work with AI agents.
+
+**Zainab**: *Frontend, Backend, and AI agents*
+- **Reason**: Has experience with full-stack development through previous projects. Interested in learning AI agents.
+- Team Lead and Main Coordinator
+
+**Samaah**: *AI agent, AI Testing, and Backend*
+- **Reason**: Worked with AI APIs, RAG, and AI-driven features in my projects, and built backend systems using Node.js, Express, REST APIs, and databases.
+
+**Jeremy**: *Backend*
+- **Reason**: ???
+
+**Tarun**: *Payments, Product, and Backend*
+- **Reason**: Built a sports betting app, primarily working on backend, UX, and processing payments. Very interested in the Payments/Security role. 
+
+**Yuan**: *AI agent and AI Testing*
+- **Reason**: Learned the basics and done personal projects with AI agents.
+
+**Aadya**: *Frontend and Backend*
+- Reason: Worked with backend in previous projects/coops and currently taking a Web Development course.
 
 
 #### Q8: How will you work as a team?
@@ -211,8 +243,21 @@ Unlike a typical course prototype, our partner intends to launch this feature di
    The expected features say the system should pick the right theatre, movie, seats, and payment method. But what counts as "right" is open to interpretation. If a user asks for "a premium action movie tonight," does that mean IMAX or UltraAVX? What if their usual seats are taken, or the showtime is sold out? If we don't pin these down with our partner, our user stories may end up too vague to build or test, and the result may not match what our partner had in mind.
 
 #### Q14. What are some potential mitigation strategies for the risks you identified?
-* Examples of mitigation strategies:
-  * More communication with the partner might help with improving clarity.
-  * Adding more details for an user story might make it less abstract.
-  * Adding an extra user story might increase the project complexity, making it less simple.
-* It's ok if you are unable to find mitigation strategies for all the risks right now.
+
+1. ***The Cineplex website could change or block automated booking.***
+
+   **Solution**: To prevent the AI from being too dependent on the website itself, we will build an abstraction layer that defines the basic functionality the AI needs to do bookings, without relying on how the website itself works. By removing this dependency, we allow easier debugging and cleaner code between the AI Agent and Cineplex API.
+
+2. ***We are building on code we did not write.***
+
+   **Solution**: This requires us to understand and properly test the functionality of the existing code. Sinc most of thes functions hav already been implemented, we want to apply our code using interfaces to clearly distinguish the two and avoid modifying pre-existing code.
+
+3. ***Letting an AI agent pay is risky.***
+
+   **Solution**: Our payment/security engineer will focus on ensuring that the AI agent won't actually make the payment themselves, but rather prepare all the neccessary details for the user to check and approve. In terms of privacy, we want to ensure th agnt does not know private details such as the user's credit card info by using a payment provider and transaction safeguards. 
+   
+
+4. ***The right theatre, movie, and seats are not clearly defined.***
+
+   **Solution**: We should specify the user’s preferences by adding required information (which we decide based on importance) so that there is no ambiguity about what movies, theatres, or seats to recommend. 
+   
