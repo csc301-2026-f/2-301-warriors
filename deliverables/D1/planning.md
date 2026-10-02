@@ -64,6 +64,112 @@ This approach supports our partner's goal of exploring how **AI agents can move 
  * User stories must contain acceptance criteria. Examples of user stories with different formats can be found here: https://www.justinmind.com/blog/user-story-examples/. **It is important that you provide a link to an artifact containing your user stories**.
  * If you have a partner, these must be reviewed and accepted by them. You need to include the evidence of partner approval (e.g., screenshot from email) or at least communication to the partner (e.g., email you sent)
 
+Our MVP is made up of 8 user stories that cover the complete movie booking flow. Stories 1-5 form the core booking experience while stories 6-8 extend the product into the more personalised "concierge" experience through memory, recurring bookings, group coordination, and savings discovery.
+
+**User Story Artifact**: [View our User Story Cards](https://www.figma.com/board/gCGdJYfJFVIfN4WBiQkCZy/User-Story-Card?node-id=0-1&t=ymdOFpdpOoLjHjbK-1)
+
+### User Story 1 — Request a Personalized Movie Booking
+
+**As a Savi user, I want to request movie tickets conversationally and have Savi remember my usual preferences in order to begin a personalized booking without repeatedly entering the same information.**
+
+**Acceptance Criteria:**
+- User can make a natural-language movie request.
+- Request may include ticket count, genre, time, theatre, or format.
+- Savi uses relevant saved preferences to fill missing details.
+- User can review and override remembered preferences.
+- Savi returns at least one suitable booking option.
+- If key information is missing, Savi asks the user to clarify.
+
+### User Story 2 — Review & Modify Booking Preferences
+
+**As a Savi user, I want Savi to pre-fill my booking using my saved preferences while still allowing me to review and modify the booking in order to ensure it matches what I want for this outing.**
+
+**Acceptance Criteria:**
+- User can review Savi's selected movie and booking details.
+- Savi may pre-fill details using saved preferences.
+- User can modify theatre, ticket count, format, and showtime.
+- User can override any preference selected from memory.
+- All changes are reflected before continuing.
+- Required booking information must be complete before proceeding.
+
+### User Story 3 — Select Seats
+
+**As a Savi user, I want to select seats or receive seat suggestions based on my preferences in order to get seating that suits me.**
+
+**Acceptance Criteria:**
+- User can view available and unavailable seats for the selected showtime.
+- User can select the required number of seats.
+- Savi can suggest seats based on the user's seating preferences.
+- User can override Savi's suggestions and choose different seats.
+- The application prevents proceeding when the seat count does not match the ticket count.
+
+### User Story 4 — Review & Confirm Booking
+
+**As a Savi user, I want to review my complete booking before payment in order to confirm that the movie, theatre, time, seats, and price are correct.**
+
+**Acceptance Criteria:**
+- Booking summary shows the movie, theatre, date, showtime, format, seats, ticket quantity, and total price.
+- User can return to edit booking details before payment.
+- User must explicitly confirm before checkout begins.
+- If checkout fails, the user receives a clear error.
+- A failed checkout must not be displayed as a successful booking.
+
+### User Story 5 — Complete Booking & Receive Tickets
+
+**As a Savi user, I want Savi to complete the Cineplex booking and show me my confirmation and tickets in order to attend the movie without having to finish the transaction manually on Cineplex.**
+
+**Acceptance Criteria:**
+- After confirmation, Savi initiates the booking through the backend.
+- A successful booking produces a clear confirmation state.
+- Confirmation includes the movie, theatre, showtime, format, and seats.
+- User can view their digital tickets after a successful purchase.
+- A failed booking must never display a valid-looking ticket.
+
+### User Story 6 — Saved Preferences & Weekly Auto-Booking
+
+**As a returning Savi user, I want Savi to remember my movie-going preferences and use them when preparing recurring movie bookings in order to reduce the effort required each time I want to go to the movies.**
+
+**Acceptance Criteria:**
+- Savi stores and retrieves recurring movie-booking preferences.
+- Saved preferences may include ticket count, theatre, genre, format, seating, and schedule.
+- Savi uses these preferences to generate a booking proposal.
+- Proposal shows the movie, theatre, showtime, seats, and price.
+- User can modify, approve, or skip the proposal.
+- Skipped bookings do not proceed; approved bookings enter the normal checkout flow.
+
+### User Story 7 — Coordinate a Group Booking
+
+**As a Savi user, I want Savi to coordinate a movie booking with my friends in order to manage invitations, confirmations, booking decisions, and payment coordination without organizing everyone manually.**
+
+**Acceptance Criteria:**
+- User can invite friends by Savi username or email.
+- Savi tracks each participant's confirmation status.
+- Organizer can see who has confirmed or is still pending.
+- Organizer can wait, proceed alone, or purchase all tickets.
+- Savi can send split-payment requests when the organizer pays.
+- Once coordination is resolved, the booking continues to checkout.
+
+### User Story 8 — Discover & Apply Coupons, Vouchers & Credits
+
+**As a Savi user, I want Savi to identify eligible coupons, vouchers, and credits from both my connected email accounts and available Savi offers in order to easily discover and apply savings before completing my movie purchase.**
+
+**Acceptance Criteria:**
+- Savi identifies eligible savings from connected email accounts and Savi offers.
+- Email scanning only occurs for accounts authorized by the user.
+- Available savings are shown during review or checkout.
+- Each discount shows its source and value.
+- User chooses which eligible discount to apply.
+- Applied savings update the price before final payment.
+
+### Partner Review
+These user stories were reviewed and approved by our partner, Ralph Maamari, Co-founder and CEO of Savi Finance
+
+**Evidence of partner review**: 
+
+<img src="./partner-user-story-approval.png"
+     alt="Slack feedback from Ralph Maamari reviewing the MVP user stories"
+     width="750">
+
 #### Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.
 
 > 🚧 **Draft — not final.** Starting point only, please review and edit before we submit.
@@ -172,6 +278,36 @@ List/describe the artifacts you will produce to organize your team. (We strongly
    * **How do you prioritize tasks?**
    * How do tasks get assigned to team members?
    * How do you determine the status of work from inception to completion?
+
+We will use Monday as our central project management system, supported by GitHub, Discord, Slack, and Google Meet. We aim to maintain a single source of truth for project work while organising team and partner communication separately. 
+
+**Monday** - Task board and sprint planning
+
+All project work will be represented as tasks on our Monday board. Tasks will have an owner, status, taskID, estimated story points, type, epic, and relevant GitHub link. Work that has not yet been scheduled will remain in the Backlog, while work that has been selected for development will be moved into the active sprint. Larger features will be organised under epics so that individual tasks can be traced back to project goals and user stories. Our TA and partner will be given access so they can view our progress directly.
+
+**Prioritization**: At the beginning of each sprint, we will review the backlog as a team and prioritize work based on MVP importance, dependencies, partner requirements, technical risks, and estimated effort. 
+Task assignment: Each task will have one clear owner responsible for coordinating it, even if multiple members collaborate on the implementation. Tasks will be assigned during sprint planning and we will avoid concentrating entire components with one person.
+
+**Task lifecycle**: Each task will progress through the states: Backlog → Ready to start → In progress → Review/Testing → Done. A task is only considered complete when relevant testing is finished and the associated code has been reviewed and merged into GitHub. Blocked tasks will be marked and discussed during team meetings so dependencies can be resolved quickly.
+
+**Note taker**: With meeting participants’ consent, we plan on using Monday’s AI note taker functionality to record and transcribe meetings. The generated notes and action items will be reviewed by the team before adding to GitHub meeting minutes and Monday.
+
+**GitHub** - Source code, pull requests, technical artifacts
+
+GitHub will be the source of truth for our code. Monday tasks that involve code will have a relevant GitHub link. Pull requests will allow team members to review changes before merging. The repo will also contain required project artifacts such as planning documents, meeting minutes, team information, readme, and deliverables.
+
+**Google Meet** - Meetings
+
+Google Meet will be used for internal team meetings and partner meetings.
+
+**Discord** - Internal team communication
+
+Discord will be our team’s informal communication channel. We will use it for quick questions, coordination, discussions, between meetings. 
+
+**Slack** - Partner Communications
+
+Slack will be our primary communication channel with our partner. We will use it for questions, discussions, scheduling, and it's where our partner will share technical and educational resources with us. 
+
 
 #### Q10: What are the rules regarding how your team works?
 
