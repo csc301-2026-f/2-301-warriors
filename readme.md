@@ -20,6 +20,8 @@ Savi Finance is a Toronto-based personal finance technology company focused on h
 Our project introduces an AI-powered Cineplex booking concierge as a new feature within Savi Finance. Users can request movie tickets through a conversational interface, while the AI agent handles the booking process based on their preferences.
 
 The feature addresses the repetitive and time-consuming nature of traditional movie booking by reducing the need to manually navigate through theatres, showtimes, seat selection, and checkout.
+
+[View our interactive mockup](./mockup.md)
 ​
 ## Key Features
  * Describe the key features in the application that the user can access.
