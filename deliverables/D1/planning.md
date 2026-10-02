@@ -163,7 +163,10 @@ Our MVP is made up of 8 user stories that cover the complete movie booking flow.
 
 ### Partner Review
 These user stories were reviewed and approved by our partner, Ralph Maamari, Co-founder and CEO of Savi Finance
-**Evidence of partner review**: <img src="./assets/partner-user-story-feedback.png"
+
+**Evidence of partner review**: 
+
+<img src="./partner-user-story-approval.png"
      alt="Slack feedback from Ralph Maamari reviewing the MVP user stories"
      width="750">
 
