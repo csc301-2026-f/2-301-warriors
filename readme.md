@@ -21,7 +21,7 @@ Our project introduces an AI-powered Cineplex booking concierge as a new feature
 
 The feature addresses the repetitive and time-consuming nature of traditional movie booking by reducing the need to manually navigate through theatres, showtimes, seat selection, and checkout.
 
-[View our interactive mockup](./mockup.md)
+[View our interactive mockup](deliverables/D1/planning.md)
 ​
 ## Key Features
  * Describe the key features in the application that the user can access.
