@@ -133,18 +133,18 @@ The roles required for this project include:
 
 Based on these descriptions, this is how we chose to assign each of our roles, given either our knowldge, exprience, and interest in the role:
 
-**Akram**: *Backend, AI Testing, and AI agents*
-- **Reason**: Has experience working on apps with React, Express, Node.js, and MongoDB. Has a solid understanding of AI and willing to learn how to work with AI agents.
+**Akram**: *Backend, AI Testing, and DevOps*
+- **Reason**: Has experience working on apps with Express, Node.js, and MongoDB. Has a solid understanding of AI and software development methodologies such as Agile. 
 
-**Zainab**: *Frontend, Backend, and AI agents*
-- **Reason**: Has experience with full-stack development through previous projects. Interested in learning AI agents.
+**Zainab**: *Frontend, Backend*
+- **Reason**: Has experience with full-stack development through previous projects.
 - Team Lead and Main Coordinator
 
 **Samaah**: *AI agent, AI Testing, and Backend*
-- **Reason**: Worked with AI APIs, RAG, and AI-driven features in my projects, and built backend systems using Node.js, Express, REST APIs, and databases.
+- **Reason**: Worked with AI APIs, RAG, and AI-driven features in projects, and built backend systems using Node.js, Express, REST APIs, and databases.
 
-**Jeremy**: *Backend*
-- **Reason**: ???
+**Jeremy**: *Backend and AI Testing*
+- **Reason**: Has experience experience working with APIs, backend systems, and application integration.
 
 **Tarun**: *Payments, Product, and Backend*
 - **Reason**: Built a sports betting app, primarily working on backend, UX, and processing payments. Very interested in the Payments/Security role. 
