@@ -1,6 +1,4 @@
 # 301 Warriors
-> _Note:_ This document will evolve throughout your project. You commit regularly to this file while working on the project (especially edits/additions/deletions to the _Highlights_ section). 
- > **This document will serve as a master plan between your team, your partner and your TA.**
 
 ## Product Details
  
@@ -58,11 +56,6 @@ While Cineplex already provides a digital booking experience, Savi differs by in
 This approach supports our partner's goal of exploring how **AI agents can move beyond traditional interfaces and automate everyday tasks**, while providing Cineplex customers with a more seamless way to book and manage their movie experiences.
 
 #### Q4: What are the user stories that make up the Minumum Viable Product (MVP)?
-
- * At least 5 user stories concerning the main features of the application - note that this can broken down further
- * You must follow proper user story format (as taught in lecture) ```As a <user of the app>, I want to <do something in the app> in order to <accomplish some goal>```
- * User stories must contain acceptance criteria. Examples of user stories with different formats can be found here: https://www.justinmind.com/blog/user-story-examples/. **It is important that you provide a link to an artifact containing your user stories**.
- * If you have a partner, these must be reviewed and accepted by them. You need to include the evidence of partner approval (e.g., screenshot from email) or at least communication to the partner (e.g., email you sent)
 
 Our MVP is made up of 8 user stories that cover the complete movie booking flow. Stories 1-5 form the core booking experience while stories 6-8 extend the product into the more personalised "concierge" experience through memory, recurring bookings, group coordination, and savings discovery.
 
@@ -172,8 +165,6 @@ These user stories were reviewed and approved by our partner, Ralph Maamari, Co-
 
 #### Q5: Have you decided on how you will build it? Share what you know now or tell us the options you are considering.
 
-> 🚧 **Draft — not final.** Starting point only, please review and edit before we submit.
-
 Our partner has specified the preferred technology stack for this project:
 
 - **Backend:** Go 
@@ -218,8 +209,6 @@ Here is the leaderboard at the end of our game. Although everyone tried their be
 
 
 #### Q7: What are the roles & responsibilities on the team?
-[NOT COMPLETE YET]
- * Add role(s) to your Team-[Team_Number]-[Team_Name].csv file on the main folder.
 
 The roles required for this project include:
 
