@@ -173,6 +173,27 @@ List/describe the artifacts you will produce to organize your team. (We strongly
    * How do tasks get assigned to team members?
    * How do you determine the status of work from inception to completion?
 
+We will use Monday as our central project management system, supported by GitHub, Discord, Slack, and Google Meet. We aim to maintain a single source of truth for project work while organising team and partner communication separately.
+**Monday** - Task board and sprint planning
+All project work will be represented as tasks on our Monday board. Tasks will have an owner, status, taskID, estimated story points, type, epic, and relevant GitHub link. Work that has not yet been scheduled will remain in the Backlog, while work that has been selected for development will be moved into the active sprint. Larger features will be organised under epics so that individual tasks can be traced back to project goals and user stories. Our TA and partner will be given access so they can view our progress directly.
+**Prioritization**: At the beginning of each sprint, we will review the backlog as a team and prioritize work based on MVP importance, dependencies, partner requirements, technical risks, and estimated effort. 
+Task assignment: Each task will have one clear owner responsible for coordinating it, even if multiple members collaborate on the implementation. Tasks will be assigned during sprint planning and we will avoid concentrating entire components with one person.
+**Task lifecycle**: Each task will progress through the states: Backlog → Ready to start → In progress → Review/Testing → Done. A task is only considered complete when relevant testing is finished and the associated code has been reviewed and merged into GitHub. Blocked tasks will be marked and discussed during team meetings so dependencies can be resolved quickly.
+**Note taker**: With meeting participants’ consent, we plan on using Monday’s AI note taker functionality to record and transcribe meetings. The generated notes and action items will be reviewed by the team before adding to GitHub meeting minutes and Monday.
+
+**GitHub** - Source code, pull requests, technical artifacts
+GitHub will be the source of truth for our code. Monday tasks that involve code will have a relevant GitHub link. Pull requests will allow team members to review changes before merging. The repo will also contain required project artifacts such as planning documents, meeting minutes, team information, readme, and deliverables.
+
+**Google Meet** - Meetings
+Google Meet will be used for internal team meetings and partner meetings.
+
+**Discord** - Internal team communication
+Discord will be our team’s informal communication channel. We will use it for quick questions, coordination, discussions, between meetings. 
+
+**Slack** - Partner Communications
+Slack will be our primary communication channel with our partner. We will use it for questions, discussions, scheduling, and it's where our partner will share technical and educational resources with us. 
+
+
 #### Q10: What are the rules regarding how your team works?
 
 **Communications:**
