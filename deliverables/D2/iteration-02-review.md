@@ -1,4 +1,4 @@
-# Your Team Number and Name
+# 301 warriors - Group 2
 
  > _Note:_ This document is meant to be written during (or shortly after) your review meeting, which should happen fairly close to the due date.      
  >      
@@ -23,18 +23,16 @@
 
 #### Q2. What did not work well
 
-List **process-related** (i.e. team organization and how you work) decisions and actions that did not work well.
+1. **Assigning broad tasks without clear individual ownership.** Initially, multiple teammates worked on the same broad task without clearly defined responsibilities. This created misalignment about who was implementing each part and how the pieces would fit together. Dividing the work into seven smaller subtasks improved this process by giving each member clear ownership and a manageable section of code to understand and maintain.
 
- * 2 - 4 important decisions, processes, actions, or anything else that did not work well for you, ordered from most to least important.
- * Give a supporting argument about what makes you think that way.
- * Feel free to refer/link to process artifact(s).
+2. **Leaving some integration details unclear before implementation.** We did not fully agree on certain data formats and component interactions before starting development. When connecting our work, we needed additional clarification about how backend results would reach the frontend and how information would pass between components. This caused rework and extra coordination. Agreeing on shared interfaces and example inputs and outputs beforehand would have made integration smoother.
 
 
 #### Q3(a). Planned changes
 
-List any **process-related** (i.e. team organization and/or how you work) changes you are planning to make (if there are any)
+1. **Establishing a clearer branching, review, and integration workflow.** We plan to define which shared branches individual task branches should merge into, the order of merges, and the reviews and tests required before each merge. We will also set deadlines for completing individual work, integrating components, and testing the combined system. This should reduce merge conflicts and confusion about which branch contains the latest changes, while leaving enough time to address integration issues.
 
- * Ordered from most to least important, with supporting argument explaining a change.
+2. **Allowing members to rotate responsibilities between sprints.** Although we divided tasks among frontend, backend, and testing teams, the assignments did not offer equal technical scope or always match members’ interests. For the next sprint, we plan to let members express their preferences and switch areas where feasible, while accounting for dependencies and sharing knowledge during handoffs. For example, someone who took on frontend work for D2 could contribute to backend development in D3. This would distribute learning opportunities more fairly and help members gain experience across the system.
 
 #### Q3(b). Integration & Next steps
 Briefly explain how you integrated the previously developed individuals components as one product (i.e. How did you split the work across your team) and how was the work integrated together.
