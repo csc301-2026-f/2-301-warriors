@@ -15,12 +15,11 @@
 
 #### Q1. What worked well
 
-List **process-related** (i.e. team organization and how you work) decisions and actions that worked well.
+1. **Forming subteams around related tasks.** We divided ourselves into three subteams based on closely connected responsibilities. This made it easier for teammates to coordinate changes, review each other’s code, and agree on data formats before combining their work. Working in smaller groups helped reduce misunderstandings and integration conflicts while allowing different parts of the project to progress simultaneously.
 
+2. **Holding regular internal team meetings.** We decided to meet as a team, without the partner or TA, at least once a week to divide tasks, clarify uncertainties, and set timelines. Meetings before demos were particularly useful for reviewing progress and confirming what was ready to present. This helped everyone stay aligned and identify blockers before they became surprises during the demo.
 
- * 2 - 4 important decisions, processes, actions, or anything else that worked well for you, ordered from most to least important.
- * Give a supporting argument about what makes you think that way.
- * Feel free to refer/link to process artifact(s).
+3. **Integrating related components in stages.** We combined closely related pieces first, such as the backend client and discovery worker, before connecting them to the frontend. This gave us smaller integration steps to review and test, making it easier to identify where mismatches originated. It also allowed teammates to begin connecting their components while other parts were still being completed.
 
 #### Q2. What did not work well
 
