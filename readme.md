@@ -103,9 +103,9 @@ You should see a conversation screen with a text box at the bottom.
 
 ### 4. Start a movie request
 
-Type a natural request, such as:
+Type a movie request, such as:
 
-> Find me a movie at Cineplex tomorrow.
+> Book me a movie for tomorrow.
 
 You may also see suggested buttons such as:
 - "Movies near me"
@@ -237,6 +237,8 @@ This license applies only to code owned by the student team. Any pre-existing Sa
 ## Deployed URL / Access Instructions
 
 **Not deployed yet.**
+
+Here is a link to a demo of the app: https://drive.google.com/drive/folders/1O4-SBhU0E2u_yQp2FOtGiVEq8jyFI5Ef?usp=sharing
 
 ## D3 Improvement Highlight
 
