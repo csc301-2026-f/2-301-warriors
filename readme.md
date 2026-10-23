@@ -1,4 +1,6 @@
 # 301 Warriors
+
+**NOTE**: the partner’s repo already had a D2 tag pointing to unrelated work, so the submission is tagged 301-warriors-D2. here’s the snapshot link: https://github.com/cheapreats/ce/tree/301-warriors-D2
 ​
 ## Partner Intro
 **Partner Organization**: Savi Finance
@@ -15,9 +17,9 @@ Savi Finance is a Toronto-based personal finance technology company focused on h
 
 ## Description about the project
 
-Our project introduces an AI-powered Cineplex booking concierge as a new feature within Savi Finance. Users can request movie tickets through a conversational interface, while the AI agent handles the booking process based on their preferences.
+Our project introduces an AI-powered Cineplex booking concierge as a new feature within Savi Finance. Users can request for movie bookings, set their preferences, and easily explore movie options, all through a natural conversation. The agent handles everything from interpreting your request to confirming the final booking details.
 
-The feature addresses the repetitive and time-consuming nature of traditional movie booking by reducing the need to manually navigate through theatres, showtimes, seat selection, and checkout.
+This feature aims to replace the repetitive and time-consuming nature of traditional movie booking by reducing the need to manually navigate through the Cineplex website while still giving the user full control of the payment/booking process.
 
 [View our interactive mockup](deliverables/D1/mockup.md)
 ​
@@ -43,32 +45,142 @@ Users can invite friends to a booking by Savi username or email. Savi can track 
 ### Coupons, Vouchers, and Credits
 During checkout, Savi can surface eligible savings from both authorized connected email accounts and Savi-provided offers. Users choose which eligible savings to apply before payment.
 
-## Instructions
- > **Current status:** The application is still under development. The interactive mockup above can currently be used to explore the intended user experience. Production access instructions will be added once a testable mobile build is available.
+## Key Use Cases
 
-### One-Time Booking
+The current version of this project supports the following use cases:
+1. **Movie discovery**: Find movies currently playing at Cineplex theatres near a specified location (i.e. user's location) and date.
 
-1. Open the Savi mobile application and access the Cineplex concierge.
-2. Enter a natural-language request, such as a preferred movie type, time, or number of tickets.
-3. Savi combines the request with relevant saved preferences and proposes a booking.
-4. Review or modify the movie, theatre, ticket quantity, format, and showtime.
-5. Select seats manually or use Savi's suggested seating.
-6. If booking with friends, invite participants and choose how the group booking should proceed.
-7. Review available coupons, vouchers, or credits and apply any desired savings.
-8. Review the complete booking summary and total price.
-9. Confirm checkout.
-10. After a successful purchase, view the booking confirmation and tickets in Savi.
+2. **Filter movie options**: Search by genre, new releases, format (IMAX or UltraAVX), occasion, or preferred time.
 
-### Recurring Booking
+3. **Find and select showtimes**: View and select available movies and showtimes for a selected theatre and date.
 
-1. Configure or save movie-going preferences.
-2. Savi uses those preferences to generate a recurring booking proposal.
-3. Review and modify the proposed movie, theatre, showtime, seats, and price.
-4. Choose to approve the proposal or skip that booking.
-5. Approved proposals continue through the normal review and checkout process.
+4. **Refine requests conversationally**: Change the location, date, theatre, movie, or time without restarting the search.
 
- ## Development requirements
- ### Technology Stack
+5. **Remember preferences**: Save preferences such as a usual theatre, favourite genres, preferred format, or viewing time.
+
+6. **Start a new request**: Reset the current search and begin a new movie discovery request.
+
+<img src="deliverables/D2/usecase_ex.png" alt="A screenshot of the app showing a simple user request and cineplex movie discovery tool" width="250">
+<img src="deliverables/D2/usecase_ex2.png" alt="A screenshot of the app showing the user's saved preferrences" width="250">
+
+**Left**: shows a simple user request and the search results based on the request. 
+
+**Right**: shows the user setting their preferrences for the agent to remember for future bookings. 
+
+Use cases such as ticket purchasing, reserving seats, and checkout are NOT included in this version. 
+
+## Instructions for use
+
+The Cineplex feature is only available through the Savi Finance **mobile** app.
+
+### 1. Install or open Savi Finance
+
+On your phone, install Savi Finance from the appropriate app store:
+
+- [Download for iPhone or iPad](https://apps.apple.com/us/app/savi-finance/id1672669909)
+- [Download for Android](https://play.google.com/store/apps/details?id=com.centro.savi)
+
+If you already have the app installed, update it before testing the feature.
+
+### 2. Sign in
+
+1. Open the Savi Finance app.
+2. Select **Sign in**.
+3. Enter your email address.
+4. Complete the sign-in instructions sent to your email.
+5. Wait until the main Savi Finance screen appears.
+
+Ask Savi requires an eligible paid plan. If you see an **Unlock Ask Savi with Pro** message instead of the chat, the account does not currently have access.
+
+### 3. Open Ask Savi
+
+There are two ways to open it:
+
+- Select the **Ask Savi** tab in the app.
+- From the home screen, tap the **Ask Savi** shortcut if it is displayed.
+
+You should see a conversation screen with a text box at the bottom.
+
+### 4. Start a movie request
+
+Type a natural request, such as:
+
+> Find me a movie at Cineplex tomorrow.
+
+You may also see suggested buttons such as:
+- "Movies near me"
+- "Theatres in Waterloo"
+- "Movies tonight"
+- "Pick a movie for me"
+
+Tap one of these buttons to send a ready-made request, or type your own request.
+
+### 5. Answer the follow-up questions
+
+Ask Savi may ask for information such as:
+
+- Your city or neighbourhood
+- The date you want to go
+- Your preferred movie
+- A preferred theatre
+- A preferred time
+- A movie format, such as IMAX or UltraAVX
+
+Here is an example of a natural conversation with the Ask Savi agent:
+
+1. **User:** “Find me a movie tomorrow.”
+2. **Ask Savi:** “Which city or area should I search?”
+3. **User:** “Toronto.”
+4. **Ask Savi:** “The date is October 21, 2026. Is that correct?”
+5. **User:** “Yes, that works.”
+
+Ask Savi remembers and clarifies the details from earlier messages in the same conversation, so you do not need to repeat information you have already provided.
+
+
+### 6. Review the results
+
+Ask Savi searches available Cineplex theatres and showtimes, then presents the relevant options.
+
+You can either: 
+- Manually select the theatre and showtime from the given list of options **OR**
+- Respond with your selection such as:
+
+    > The second theatre.
+
+    or:
+
+    > Show me the 6 PM options.
+
+You can always change the search or include additional details to filter the search.
+
+### 7. Save movie preferences
+
+You can set your preferences by clicking on little icon next to your typing bar.
+
+<img src="deliverables/D2/user_pref_icon.png" alt="Screenshot showing how to set user preferrences" width="250">
+
+You may save preferences such as:
+
+- Your usual theatre
+- Preferred format, such as IMAX or UltraAVX
+- Favourite genres
+- Preferred time of day
+
+These preferences can help Ask Savi make future movie searches more relevant.
+
+### If the feature does not appear
+
+Check the following:
+
+1. Confirm that you are using the latest version of the Savi Finance app.
+2. Confirm that you are signed in.
+3. Confirm that your account has Ask Savi access.
+4. Close and reopen the app.
+5. Start a new Ask Savi conversation.
+6. If the movie suggestions or movie search still do not appear, the feature may not yet be enabled in the deployed production version for your account.
+
+## Development requirements
+### Technology Stack
 
 The current partner-confirmed stack includes:
 
@@ -84,16 +196,16 @@ The existing Cineplex browser-worker also uses infrastructure including Bazel, R
 
 A developer will require access to the Savi codebase and the services/configuration supplied by the partner.
 
- ## Deployment and Github Workflow
+## Deployment and Github Workflow
 
- ### GitHub Workflow
+### GitHub Workflow
 ​The team uses `main` as the stable integration branch. Development work is completed on separate branches rather than directly on `main`.
 
 Branches follow the convention:
 
-- `feature/<feature-name>` for new functionality
-- `fix/<issue-name>` for bug fixes
-- `docs/<change-name>` for documentation changes
+- `feat(cineplex): <feature-name>` for new functionality
+- `fix(cineplex): <issue-name>` for bug fixes
+- `docs(cineplex): <change-name>` for documentation changes
 
 When a task is ready:
 
