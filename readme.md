@@ -163,7 +163,7 @@ This license applies only to code owned by the student team. Any pre-existing Sa
 
 ## Deployed URL / Access Instructions
 
-Open the link in an **incognito/private browser window** to download the APK.
+Open the link in an **incognito/private browser window** to download the APK. **[Download the APK](https://expo.dev/accounts/tarunnn65/projects/savi-finance/builds/99a46d44-fec8-4705-8018-f2c5a2bda637)** 
 
 See [Instructions for use](#instructions-for-use) above for **Android installation** and **Mac emulator** instructions.
 
