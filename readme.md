@@ -69,115 +69,40 @@ The current version of this project supports the following use cases:
 
 Use cases such as ticket purchasing, reserving seats, and checkout are NOT included in this version. 
 
+**Current Functionality to Test**
+The current grading build supports movie discovery through the predefined suggestion chips (buttons) in Ask Savi. Tap a movie suggestion chip to trigger the implemented flow and review the movie, theatre, and showtime information displayed in the app.
+
+
 ## Instructions for use
 
-The Cineplex feature is only available through the Savi Finance **mobile** app.
+### 1. Install the app
 
-### 1. Install or open Savi Finance
+Open the link in an **incognito/private browser window only**.
+**[Download the grading APK](https://expo.dev/accounts/tarunnn65/projects/savi-finance/builds/99a46d44-fec8-4705-8018-f2c5a2bda637)** or scan the QR code below. 
 
-On your phone, install Savi Finance from the appropriate app store:
+![APK download QR code](apkqr.png)
 
-- [Download for iPhone or iPad](https://apps.apple.com/us/app/savi-finance/id1672669909)
-- [Download for Android](https://play.google.com/store/apps/details?id=com.centro.savi)
+- **Android:** Download and open the `.apk` file, follow the installation prompts, then open Savi Finance.
+- **Mac:** Start an Android emulator through Android Studio’s **Virtual Device Manager**. Drag the downloaded APK onto the **running emulator window**, then open Savi Finance.
 
-If you already have the app installed, update it before testing the feature.
+The app opens signed in to a **demo account**. Internet access is required. The APK does not run on iPhones or the iOS Simulator.
 
-### 2. Sign in
+### 2. Open Ask Savi
 
-1. Open the Savi Finance app.
-2. Select **Sign in**.
-3. Enter your email address.
-4. Complete the sign-in instructions sent to your email.
-5. Wait until the main Savi Finance screen appears.
+Select the **Ask Savi** tab at the bottom of the screen.
+![home screen](sc1.png)
 
-Ask Savi requires an eligible paid plan. If you see an **Unlock Ask Savi with Pro** message instead of the chat, the account does not currently have access.
+### 3. Test movie discovery
+**Use the chips to test this build.** Manually typed requests currently return the default AI response. Booking and payment are not included.
 
-### 3. Open Ask Savi
+Tap a suggestion chip:
+- **Movies near me**
+- **Theatres in Waterloo**
+- **Movies tonight**
+- **Pick a movie for me**
 
-There are two ways to open it:
+Review the displayed **theatre, movie, and showtime options**.
 
-- Select the **Ask Savi** tab in the app.
-- From the home screen, tap the **Ask Savi** shortcut if it is displayed.
-
-You should see a conversation screen with a text box at the bottom.
-
-### 4. Start a movie request
-
-Type a movie request, such as:
-
-> Book me a movie for tomorrow.
-
-You may also see suggested buttons such as:
-- "Movies near me"
-- "Theatres in Waterloo"
-- "Movies tonight"
-- "Pick a movie for me"
-
-Tap one of these buttons to send a ready-made request, or type your own request.
-
-### 5. Answer the follow-up questions
-
-Ask Savi may ask for information such as:
-
-- Your city or neighbourhood
-- The date you want to go
-- Your preferred movie
-- A preferred theatre
-- A preferred time
-- A movie format, such as IMAX or UltraAVX
-
-Here is an example of a natural conversation with the Ask Savi agent:
-
-1. **User:** “Find me a movie tomorrow.”
-2. **Ask Savi:** “Which city or area should I search?”
-3. **User:** “Toronto.”
-4. **Ask Savi:** “The date is October 21, 2026. Is that correct?”
-5. **User:** “Yes, that works.”
-
-Ask Savi remembers and clarifies the details from earlier messages in the same conversation, so you do not need to repeat information you have already provided.
-
-
-### 6. Review the results
-
-Ask Savi searches available Cineplex theatres and showtimes, then presents the relevant options.
-
-You can either: 
-- Manually select the theatre and showtime from the given list of options **OR**
-- Respond with your selection such as:
-
-    > The second theatre.
-
-    or:
-
-    > Show me the 6 PM options.
-
-You can always change the search or include additional details to filter the search.
-
-### 7. Save movie preferences
-
-You can set your preferences by clicking on little icon next to your typing bar.
-
-<img src="deliverables/D2/user_pref_icon.png" alt="Screenshot showing how to set user preferrences" width="250">
-
-You may save preferences such as:
-
-- Your usual theatre
-- Preferred format, such as IMAX or UltraAVX
-- Favourite genres
-- Preferred time of day
-
-These preferences can help Ask Savi make future movie searches more relevant.
-
-### If the feature does not appear
-
-Check the following:
-
-1. Confirm that you are using the latest version of the Savi Finance app.
-2. Confirm that you are signed in.
-3. Confirm that your account has Ask Savi access.
-4. Close and reopen the app.
-5. Start a new Ask Savi conversation.
-6. If the movie suggestions or movie search still do not appear, the feature may not yet be enabled in the deployed production version for your account.
 
 ## Development requirements
 ### Technology Stack
