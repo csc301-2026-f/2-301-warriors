@@ -103,6 +103,7 @@ Tap a suggestion chip:
 - **Pick a movie for me**
 
 Review the displayed **theatre, movie, and showtime options**.
+Manually select a **theatre** to view its available movies and showtimes.
 
 
 ## Development requirements
@@ -162,9 +163,14 @@ This license applies only to code owned by the student team. Any pre-existing Sa
 
 ## Deployed URL / Access Instructions
 
-**Not deployed yet.**
+Open the link in an **incognito/private browser window** to download the APK.
 
-Here is a link to a demo of the app: https://drive.google.com/drive/folders/1O4-SBhU0E2u_yQp2FOtGiVEq8jyFI5Ef?usp=sharing
+See [Instructions for use](#instructions-for-use) above for **Android installation** and **Mac emulator** instructions.
+
+This evaluation build is signed in to a **demo account**. Test using the **movie suggestion chips**; manually typed movie requests currently return the default AI response.
+
+[Watch the app demo](https://drive.google.com/drive/folders/1O4-SBhU0E2u_yQp2FOtGiVEq8jyFI5Ef?usp=sharing)
+
 
 ## D3 Improvement Highlight
 
