@@ -90,6 +90,7 @@ The app opens signed in to a **demo account**. Internet access is required. The 
 ### 2. Open Ask Savi
 
 Select the **Ask Savi** tab at the bottom of the screen.
+
 ![home screen](/deliverables/D2/sc1.png)
 
 ### 3. Test movie discovery
