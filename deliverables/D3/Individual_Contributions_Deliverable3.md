@@ -36,7 +36,7 @@
 - Worked on integrating the CAPTCHA challenge handoff and user-facing interaction flow.
 - Integrated challenge status and completion actions with the mobile interface, including pending, completed, failed, and expired states.
 - Handled error messaging, timeouts, cancellation, interrupted sessions, and recovery-flow integration with Samaah.
-- Submitted a pull request implementing the bot-detection and CAPTCHA challenge-handling functionality.
+- Submitted PR #7111 implementing the bot-detection and CAPTCHA challenge-handling functionality.
 
 **Jeremy Chan**, Integration and E2E Testing Lead
 - Prepared the backend/web-scraper end-to-end demonstration requested by Ralph, including JSON extracts at relevant stages.
