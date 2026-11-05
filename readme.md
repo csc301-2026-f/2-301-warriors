@@ -72,7 +72,6 @@ Use cases such as ticket purchasing, reserving seats, and checkout are NOT inclu
 **Current Functionality to Test**
 The current grading build supports movie discovery through the predefined suggestion chips (buttons) in Ask Savi. Tap a movie suggestion chip to trigger the implemented flow and review the movie, theatre, and showtime information displayed in the app.
 
-
 ## Instructions for use
 
 ### 1. Install the app
@@ -174,4 +173,11 @@ This evaluation build is signed in to a **demo account**. Test using the **movie
 
 ## D3 Improvement Highlight
 
-**Not there yet.**
+The main improvement in D3 is the progression toward a more complete and reliable AI-powered movie booking experience. We extended the booking workflow beyond movie and showtime discovery by adding seat selection, while implementing CAPTCHA and bot-detection handling in the Cineplex worker to detect provider-side challenges and return structured errors. Together, these improvements strengthen both the user-facing booking experience and the reliability of the underlying backend infrastructure.
+
+## Non Functional Requirements
+Beyond implementing new features, we considered the quality, security, and reliability of the application.
+
+- **Secure Data Handling**: Keep API keys and sensitive credentials on the backend rather than exposing them in client-side code or API responses. Handle authentication tokens securely.
+- **Input Validation**: Validate user requests and booking parameters before processing them to prevent invalid or inconsistent data from reaching backend services.
+- **Reliability and Error Handling**: Implement structured error responses, including PROVIDER_BLOCKED for CAPTCHA and bot-detection challenges, so the application can distinguish provider-side restrictions from ordinary request failures.
