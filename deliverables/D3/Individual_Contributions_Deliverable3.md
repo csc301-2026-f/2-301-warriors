@@ -29,7 +29,7 @@
 - Added challenge status and interaction-reporting endpoints, with expiry handling and independent CAPTCHA verification.
 - Adapted CaptchaVerifier to verify browser state before allowing an operation to proceed.
 - Added retrieval of the original operation and payload, marking challenges complete only after successful execution.
-- Completed production-evolution.md.
+- Completed production-evolution.md and updated readme.md to include D3 improvements.
 
 **Zainab Siddiqui**, CAPTCHA Interaction and Recovery UI
 - Investigated whether users could interact with the same worker browser through a supported handoff mechanism.
@@ -42,5 +42,5 @@
 - Prepared the backend/web-scraper end-to-end demonstration requested by Ralph, including JSON extracts at relevant stages.
 - Demonstrated the connected flow from theatre, movie, and showtime discovery through seat-map extraction and selection-summary generation.
 - Prepared repeatable demonstration commands or scripts using existing tooling, with readable output and no exposed secrets.
-- Verified cross-component integration and relevant CI/build checks, and documented reproduction instructions and demonstration evidence in the README.
+- Verified cross-component integration and relevant CI/build checks.
 
