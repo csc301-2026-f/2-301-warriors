@@ -48,29 +48,33 @@ During checkout, Savi can surface eligible savings from both authorized connecte
 ## Key Use Cases
 
 The current version of this project supports the following use cases:
-1. **Movie discovery**: Find movies currently playing at Cineplex theatres near a specified location (i.e. user's location) and date.
 
-2. **Filter movie options**: Search by genre, new releases, format (IMAX or UltraAVX), occasion, or preferred time.
+1. **Movie Discovery**: Find movies currently playing at Cineplex theatres near a specified location (i.e. user's location) and date.
 
-3. **Find and select showtimes**: View and select available movies and showtimes for a selected theatre and date.
+2. **Filter Movie Options**: Search by genre, new releases, format (IMAX or UltraAVX), occasion, or preferred time.
 
-4. **Refine requests conversationally**: Change the location, date, theatre, movie, or time without restarting the search.
+3. **Find and Select Showtimes**: View and select available movies and showtimes for a selected theatre and date.
 
-5. **Remember preferences**: Save preferences such as a usual theatre, favourite genres, preferred format, or viewing time.
+4. **Refine Requests Conversationally**: Change the location, date, theatre, movie, or time without restarting the search.
 
-6. **Start a new request**: Reset the current search and begin a new movie discovery request.
+5. **Remember Preferences**: Save preferences such as a usual theatre, favourite genres, preferred format, or viewing time.
 
-<img src="deliverables/D2/usecase_ex.png" alt="A screenshot of the app showing a simple user request and cineplex movie discovery tool" width="250">
-<img src="deliverables/D2/usecase_ex2.png" alt="A screenshot of the app showing the user's saved preferrences" width="250">
+6. **Start a New Request**: Reset the current search and begin a new movie discovery request.
 
-**Left**: shows a simple user request and the search results based on the request. 
+7. **Select a Seat**: Automatically select the best available seats based on the number of tickets, or manually choose preferred seats from the seating map. Users can also switch to D-BOX seating.
 
-**Right**: shows the user setting their preferrences for the agent to remember for future bookings. 
+9. **Review Booking Summary**: View a summary of the selected theatre, movie, showtime, and seats. This does not include checkout or payment processing.
 
-Use cases such as ticket purchasing, reserving seats, and checkout are NOT included in this version. 
+### Example Screenshots:
+<p align="center">
+  <img src="deliverables/D2/usecase_ex.png" alt="Movie discovery request and search results" width="250">
+  <img src="deliverables/D2/usecase_ex2.png" alt="User setting saved preferences for the agent" width="250">
+</p>
 
-**Current Functionality to Test**
-The current grading build supports movie discovery through the predefined suggestion chips (buttons) in Ask Savi. Tap a movie suggestion chip to trigger the implemented flow and review the movie, theatre, and showtime information displayed in the app.
+<p align="center">
+  <em>Left: A user request and the movie discovery results generated from it.</em><br>
+  <em>Right: The user setting preferences for the agent to remember for future bookings.</em>
+</p>
 
 ## Instructions for use
 
@@ -92,18 +96,82 @@ Select the **Ask Savi** tab at the bottom of the screen.
 
 ![home screen](/deliverables/D2/sc1.png)
 
-### 3. Test movie discovery
-**Use the chips to test this build.** Manually typed requests currently return the default AI response. Booking and payment are not included.
+### 3. Movie Discovery
+**Use the suggestion chips to test this build.** Manually typed requests currently return the default AI response. Booking and payment are not included.
 
-Tap a suggestion chip:
+Tap one of the following suggestion chips:
 - **Movies near me**
 - **Theatres in Waterloo**
 - **Movies tonight**
 - **Pick a movie for me**
 
-Review the displayed **theatre, movie, and showtime options**.
-Manually select a **theatre** to view its available movies and showtimes.
+Manually select a **theatre** to view its available movies and showtimes. Savi automatically selects the best available movie, showtime, and seats based on your request. Select `Other Movies` to explore alternative movie and showtime options.
 
+### 4. Seat Selection
+After selecting a theatre, movie, and showtime, Savi automatically selects the best available seats based on the number of tickets.
+
+To change the selection:
+1. Click `Change Seats`.
+2. Choose your preferred seats on the seating map.
+3. Optionally switch to D-BOX seating.
+4. Review the seating map, which indicates available, occupied, and accessible seats, with labels explaining each category.
+5. Click `Use These Seats`, then click `Save` to proceed to the final booking summary.
+
+## Testing
+
+Frameworks: Go's `testing` package run through Bazel (backend and Cineplex worker), Node scripts, Python `unittest`, and Jest (mobile app).
+
+### Run the tests (no credentials needed)
+
+From `sf1/`:
+
+```bash
+bazel test //api/rpc/handlers/send_ai_chat_message/... //cineplex-browser-worker/...
+node cineplex-browser-worker/seat_preview_dom_test.mjs
+python3 -B -m unittest discover -s cineplex-browser-worker -p run_live_seats_test.py
+```
+
+Then the mobile app:
+
+```bash
+cd sba-mobile && npm ci && npm test -- ask-savi
+```
+
+Each command prints the passing and failing tests. The Bazel and Jest suites also run in CI on pull requests (`.github/workflows/ci_pr.yaml`).
+
+### What is covered
+
+| Area | Tests |
+|---|---|
+| Seat map extraction, normalization and validation | `sf1/api/rpc/handlers/send_ai_chat_message/cineplex/seat_map_test.go`, `sf1/cineplex-browser-worker/seat_map_test.go`, `seat_preview_test.go` |
+| Saved-page replay: normalized showtimes match the real Cineplex page they came from | `sf1/cineplex-browser-worker/saved_page_replay_test.go` |
+| Seat preview reading different page structures | `sf1/cineplex-browser-worker/seat_preview_dom_test.mjs` |
+| Live-test runner safety (opt-in only, credentials stay private) | `sf1/cineplex-browser-worker/run_live_seats_test.py` |
+| `cineplex_discovery` AI tool (inputs, outputs, error codes) | `sf1/api/rpc/handlers/send_ai_chat_message/tools/cineplex_discovery_test.go` |
+| Ask Savi showtime, theatre and chat cards | `sba-mobile/components/ask-savi/*.spec.tsx` |
+
+### Live end-to-end test (needs Browserbase credentials)
+
+This test calls the real Cineplex site through Browserbase. It covers theatre and showtime discovery, live seat retrieval, and backend normalization of the seat map. It uses one paid Browserbase session, so it is optional and is not part of CI.
+
+**Requirements:** Bazel (or Bazelisk) on your `PATH`, a Linux or WSL environment, and Browserbase credentials.
+
+From `sf1/`:
+
+```bash
+export BROWSERBASE_API_KEY=<your key>
+export BROWSERBASE_PROJECT_ID=<your project id>
+CINEPLEX_LIVE_PRODUCTION_SEATS=1 python3 cineplex-browser-worker/run_live_seats.py
+```
+
+The script builds the worker test, runs it, then validates the result with the backend's production `DecodeSeatMapResult`. The last line is the result:
+
+- `RESULT: PASS`: the live seat map was retrieved and passed backend validation.
+- `RESULT: UNAVAILABLE` (exit code 2): Cineplex blocked the request or no suitable showing was found. This is not a code failure, so run it again later.
+- `RESULT: FAIL`: setup or validation failed, and the message says which step.
+- `RESULT: SKIP`: the opt-in variable `CINEPLEX_LIVE_PRODUCTION_SEATS=1` was not set, so nothing ran.
+
+Optional: `CINEPLEX_LIVE_SELECTION=first` (default) or `alternate` chooses which suitable showing is used. Do not set `CINEPLEX_PREVIEW_URL` or `CINEPLEX_TARGET_SHOWTIME_ID`, because the script refuses to run with them.
 
 ## Development requirements
 ### Technology Stack
@@ -173,7 +241,7 @@ This evaluation build is signed in to a **demo account**. Test using the **movie
 
 ## D3 Improvement Highlight
 
-The main improvement in D3 is the progression toward a more complete and reliable AI-powered movie booking experience. We extended the booking workflow beyond movie and showtime discovery by adding seat selection, while implementing CAPTCHA and bot-detection handling in the Cineplex worker to detect provider-side challenges and return structured errors. Together, these improvements strengthen both the user-facing booking experience and the reliability of the underlying backend infrastructure.
+The main improvement in D3 is the progression toward a more complete and reliable AI-powered movie booking experience. We extended the booking workflow beyond movie and showtime discovery by implementing seat selection, allowing users to review and customize their preferred seats. We also implemented CAPTCHA and bot-detection handling in the Cineplex worker to detect provider-side challenges and return structured error responses. Together, these improvements enhance the user-facing booking experience while strengthening the reliability of the underlying backend infrastructure.
 
 ## Non Functional Requirements
 Beyond implementing new features, we considered the quality, security, and reliability of the application.
