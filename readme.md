@@ -266,6 +266,113 @@ Since D2, we have extended the booking workflow beyond movie and showtime discov
 
 We considered mobile accessibility by aiming to make the movie discovery and booking workflow clear and easy to navigate. The interface uses clear labels and visual indicators to distinguish available, occupied, and accessible seats. We also included a zoom-in feature that allows users to view the seating map more closely when selecting their seats.
 
+<p align="center">
+  <img src="deliverables/D3/labels.jpg" alt="Seat selection interface with labels and visual indicators" width="250">
+  <img src="deliverables/D3/zoom1.jpg" alt="Seating map showing the zoom-in option" width="250">
+  <img src="deliverables/D3/zoom2.jpg" alt="Zoomed-in seating map with zoom-in and zoom-out options" width="250">
+</p>
+
+<p align="center">
+  <em>Left: Seat labels and visual indicators.</em><br>
+  <em>Centre: Seating map with the zoom-in option.</em><br>
+  <em>Right: Enlarged seating map with zoom-in and zoom-out controls.</em>
+</p>
+
 ### Security and Data Handling
 
-We considered security throughout the Cineplex integration by implementing structured error handling for provider-side CAPTCHA and bot-detection challenges. The backend verifies challenge status and browser session ownership before allowing the original operation to be replayed, rather than trusting the frontend to report that a challenge was solved. Authentication token storage and secret management should also be reviewed to ensure credentials are not hardcoded or stored insecurely.
+We considered security throughout the Cineplex integration by implementing structured error handling for provider-side CAPTCHA and bot-detection challenges. The backend tracks pending challenges, validates browser session ownership, and independently verifies that a challenge has been resolved before replaying the original operation. This prevents the frontend from simply declaring a CAPTCHA solved without backend verification.
+
+We also use environment-based configuration for sensitive credentials, including the Cineplex worker service secret and Browserbase API credentials, rather than embedding these values directly in the worker's source code.
+
+**CAPTCHA Detection/Response**
+
+The worker detects provider-side CAPTCHA and bot-detection challenges and routes blocked requests to the challenge-handling logic, returning a structured error response.
+
+In `sf1/cineplex-browser-worker/handlers.go`, function `SearchTheatres`:
+
+```go
+if out["providerBlocked"] == true {
+    return nil, h.blockedChallengeError(c, s, p)
+}
+```
+
+**Challenge Tracking**
+
+When an interactive challenge is detected, the backend creates and stores a PendingChallenge record containing the challenge ID, session information, original operation, status, and expiration time.
+
+In `sf1/cineplex-browser-worker/handlers.go`, function `blockedChallengeError`:
+
+```go
+record := PendingChallenge{
+		ID:                id,
+		BookingSessionID:  c.Envelope.BookingSessionID,
+		BrowserSessionID:  c.Envelope.BrowserSessionID,
+		ProviderSessionID: s.SessionID,
+		Operation:         c.Envelope.Command,
+		Payload:           payload,
+		Status:            ChallengePending,
+		CreatedAt:         createdAt,
+		ExpiresAt:         expiresAt,
+	}
+	if err := h.Challenges.Create(record); err != nil {
+		return blocked
+	}
+
+	blocked.ChallengeID = id
+	blocked.CaptchaScreenshot = screenshot
+	blocked.LiveViewURL = h.challengeLiveView(ctx, c, record)
+	return blocked
+```
+
+**Backend Verification**
+
+In `sf1/cineplex-browser-worker/handlers.go`, the `CompleteChallenge` function validates browser session ownership, inspects the browser state, and independently verifies that the CAPTCHA challenge has been resolved before replaying the original operation.
+
+```go
+if s.SessionID != record.ProviderSessionID {
+    return h.finishChallenge(c, record, ChallengeExpired, "BROWSER_SESSION_REPLACED")
+}
+
+browserState, stateErr := h.inspectCaptchaBrowser(
+    verifyCtx,
+    c,
+    s,
+    record.Operation,
+)
+
+if browserState.ChallengeVisible {
+    return pending()
+}
+
+verified, verifyErr := h.CaptchaVerifier.Verify(verifyCtx, browserState)
+if verifyErr != nil {
+    return fail(asCommandError(verifyErr, ErrProviderUnavailable))
+}
+if !verified {
+    return fail(&CommandError{Code: ErrChallengeFailed})
+}
+```
+
+**Credential Configuration**
+
+In `sf1/cineplex-browser-worker/core.go`, in function `ParseConfig`, the worker loads its service authentication secret and Browserbase credentials from environment variables and validates that the required service secret is configured.
+
+```go
+c := Config{
+    Environment:  strings.TrimSpace(env["ENVIRONMENT"]),
+    ServiceSecret: strings.TrimSpace(env["CINEPLEX_BROWSER_WORKER_SERVICE_SECRET"]),
+    Version:      strings.TrimSpace(env["CINEPLEX_BROWSER_WORKER_VERSION"]),
+    Provider:     strings.TrimSpace(env["CINEPLEX_BROWSER_WORKER_PROVIDER"]),
+}
+
+if c.ServiceSecret == "" || len(c.ServiceSecret) < 16 {
+    return Config{}, fmt.Errorf("CINEPLEX_BROWSER_WORKER_SERVICE_SECRET is required")
+}
+
+c.BrowserbaseAPIKey = strings.TrimSpace(env["BROWSERBASE_API_KEY"])
+c.BrowserbaseProjectID = strings.TrimSpace(env["BROWSERBASE_PROJECT_ID"])
+
+if c.Provider == "browserbase" && (c.BrowserbaseAPIKey == "" || c.BrowserbaseProjectID == "") {
+    return Config{}, fmt.Errorf("Browserbase configuration is required")
+}
+```
