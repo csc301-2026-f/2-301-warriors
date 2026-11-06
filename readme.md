@@ -15,11 +15,11 @@
 
 Savi Finance is a Toronto-based personal finance technology company focused on helping people take control of their financial future. Its platform brings financial accounts, spending insights, goals, and planning tools together in one place, with AI-powered features designed to make financial management simpler and more accessible.
 
-## Description about the project
+## Description
 
-Our project introduces an AI-powered Cineplex booking concierge as a new feature within Savi Finance. Users can request for movie bookings, set their preferences, and easily explore movie options, all through a natural conversation. The agent handles everything from interpreting your request to confirming the final booking details.
+Our project introduces an AI-powered Cineplex booking concierge as a new feature within Savi Finance. Designed for moviegoers, the agent allows users to request movie recommendations and bookings, set personal preferences, and explore available movie options through natural conversation. It interprets user requests, helps discover theatres, movies, and showtimes, and guides users through seat selection and reviewing their booking summary.
 
-This feature aims to replace the repetitive and time-consuming nature of traditional movie booking by reducing the need to manually navigate through the Cineplex website while still giving the user full control of the payment/booking process.
+This feature aims to simplify the traditional movie-booking process by reducing the need to manually navigate the Cineplex website. Users can discover and select their preferred movie options conversationally while maintaining control over the final booking and payment process.
 
 [View our interactive mockup](deliverables/D1/mockup.md)
 ​
@@ -45,7 +45,7 @@ Users can invite friends to a booking by Savi username or email. Savi can track 
 ### Coupons, Vouchers, and Credits
 During checkout, Savi can surface eligible savings from both authorized connected email accounts and Savi-provided offers. Users choose which eligible savings to apply before payment.
 
-## Key Use Cases
+## Core Workflow
 
 The current version of this project supports the following use cases:
 
@@ -66,6 +66,9 @@ The current version of this project supports the following use cases:
 9. **Review Booking Summary**: View a summary of the selected theatre, movie, showtime, and seats. This does not include checkout or payment processing.
 
 ### Example Screenshots:
+
+#### Movie Discovery and Saved Preferences
+
 <p align="center">
   <img src="deliverables/D2/usecase_ex.png" alt="Movie discovery request and search results" width="250">
   <img src="deliverables/D2/usecase_ex2.png" alt="User setting saved preferences for the agent" width="250">
@@ -76,7 +79,21 @@ The current version of this project supports the following use cases:
   <em>Right: The user setting preferences for the agent to remember for future bookings.</em>
 </p>
 
-## Instructions for use
+#### Seat Selection and Booking Summary
+
+<p align="center">
+  <img src="deliverables/D3/seat_selection.jpg" alt="Savi automatically selecting seats for a movie booking" width="250">
+  <img src="deliverables/D3/seat_map.jpg" alt="Cineplex seating map showing available, occupied, and accessible seats" width="250">
+  <img src="deliverables/D3/booking_summary.jpg" alt="Booking summary displaying the selected movie, showtime, and seats" width="250">
+</p>
+
+<p align="center">
+  <em>Left: Savi's automatic seat selection.</em><br>
+  <em>Centre: The seating map where users can change their seats.</em><br>
+  <em>Right: The final booking summary before checkout.</em>
+</p>
+
+## Instructions For Use
 
 ### 1. Install the app
 
@@ -173,7 +190,7 @@ The script builds the worker test, runs it, then validates the result with the b
 
 Optional: `CINEPLEX_LIVE_SELECTION=first` (default) or `alternate` chooses which suitable showing is used. Do not set `CINEPLEX_PREVIEW_URL` or `CINEPLEX_TARGET_SHOWTIME_ID`, because the script refuses to run with them.
 
-## Development requirements
+## Development Requirements
 ### Technology Stack
 
 The current partner-confirmed stack includes:
