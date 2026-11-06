@@ -2,7 +2,7 @@
 
 **NOTE**: the partner’s repo already had a D2 tag pointing to unrelated work, so the submission is tagged 301-warriors-D2. here’s the snapshot link: https://github.com/cheapreats/ce/tree/301-warriors-D2
 ​
-## Partner Intro
+## Partner Introduction
 **Partner Organization**: Savi Finance
 
 **Primary Point of Contact**: 
@@ -70,7 +70,7 @@ The current version of this project supports the following use cases:
 #### Movie Discovery and Saved Preferences
 
 <p align="center">
-  <img src="deliverables/D2/usecase_ex.png" alt="Movie discovery request and search results" width="250">
+  <img src="deliverables/D3/movie-discovery.jpg" alt="Movie discovery request and search results" width="250">
   <img src="deliverables/D2/usecase_ex2.png" alt="User setting saved preferences for the agent" width="250">
 </p>
 
@@ -258,11 +258,14 @@ This evaluation build is signed in to a **demo account**. Test using the **movie
 
 ## D3 Improvement Highlight
 
-The main improvement in D3 is the progression toward a more complete and reliable AI-powered movie booking experience. We extended the booking workflow beyond movie and showtime discovery by implementing seat selection, allowing users to review and customize their preferred seats. We also implemented CAPTCHA and bot-detection handling in the Cineplex worker to detect provider-side challenges and return structured error responses. Together, these improvements enhance the user-facing booking experience while strengthening the reliability of the underlying backend infrastructure.
+Since D2, we have extended the booking workflow beyond movie and showtime discovery by implementing automatic and manual seat selection, allowing users to customize their seats and review a final booking summary. We also implemented CAPTCHA and bot-detection handling in the Cineplex worker to detect provider-side challenges and return structured error responses. Users can explore the seat-selection improvements after choosing a theatre, movie, and showtime, while the CAPTCHA handling operates in the backend during Cineplex interactions.
 
-## Non Functional Requirements
-Beyond implementing new features, we considered the quality, security, and reliability of the application.
+## Non-Functional Requirements
 
-- **Secure Data Handling**: Keep API keys and sensitive credentials on the backend rather than exposing them in client-side code or API responses. Handle authentication tokens securely.
-- **Input Validation**: Validate user requests and booking parameters before processing them to prevent invalid or inconsistent data from reaching backend services.
-- **Reliability and Error Handling**: Implement structured error responses, including PROVIDER_BLOCKED for CAPTCHA and bot-detection challenges, so the application can distinguish provider-side restrictions from ordinary request failures.
+### Accessibility
+
+We considered mobile accessibility by aiming to make the movie discovery and booking workflow clear and easy to navigate. The interface uses clear labels and visual indicators to distinguish available, occupied, and accessible seats. We also included a zoom-in feature that allows users to view the seating map more closely when selecting their seats.
+
+### Security and Data Handling
+
+We considered security throughout the Cineplex integration by implementing structured error handling for provider-side CAPTCHA and bot-detection challenges. The backend verifies challenge status and browser session ownership before allowing the original operation to be replayed, rather than trusting the frontend to report that a challenge was solved. Authentication token storage and secret management should also be reviewed to ensure credentials are not hardcoded or stored insecurely.
