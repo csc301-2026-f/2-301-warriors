@@ -18,7 +18,7 @@ Following D2, our team focused on extending the movie booking experience and imp
 
 ### Extending the Booking Workflow
 
-We extended the existing movie discovery flow to support seat selection as another step in the booking journey. Previously, users could explore movies, theatres, and showtimes, but the workflow did not provide a way to proceed with selecting seats. To address this, we implemented a seat-map retrieval and selection flow that allows users to view the seating layout for a selected screening, identify available and unavailable seats, and select their preferred seats.
+We extended the existing movie discovery flow to support seat selection as another step in the booking journey. To address this, we implemented a seat-map retrieval and selection flow that allows users to view the seating layout for a selected screening, identify available and unavailable seats, and select their preferred seats.
 
 This required coordinating four interconnected components:
 
@@ -80,4 +80,4 @@ One of the harder aspects was working with the seat-map scraper and ensuring tha
 
 We also encountered challenges when testing and integrating the CAPTCHA-handling functionality. Integrating the verification flow into the Ask Savi chat required coordination between the frontend, backend, and browser worker to ensure that challenge information and user interactions were communicated correctly. Simulating CAPTCHA challenges in a controlled testing environment was particularly difficult, making it challenging to validate the complete verification flow and ensure that the original browser session could continue after successful verification.
 
-Moving toward D4, we want to focus on strengthening the end-to-end booking experience and validating the reliability of the complete integration. This includes improving test coverage for failure scenarios, verifying non-functional requirements such as accessibility and secure data handling, and implementing payment processing through the Cineplex backend and Stripe to allow users to complete and confirm their bookings. Our goal is to deliver a cohesive, reliable booking experience that supports users from movie discovery through checkout and booking confirmation.
+Moving toward D4, we plan to focus on strengthening the end-to-end booking experience and validating the reliability of the overall integration. This includes expanding test coverage for failure scenarios, refining the user interface, and integrating payment processing through the Cineplex backend and Stripe so users can complete and confirm their bookings. Our goal is to deliver a cohesive and reliable experience that guides users through every stage of the booking process, from movie discovery to checkout and booking confirmation.
