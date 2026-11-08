@@ -99,12 +99,6 @@ The current version of this project supports the following use cases:
 
 Open the link in an **incognito/private browser window only**.
 
-## For D2:
-**[Download the grading APK for D2](https://expo.dev/accounts/tarunnn65/projects/savi-finance/builds/99a46d44-fec8-4705-8018-f2c5a2bda637)** or scan the QR code below.
-
-![D2 APK download QR code](deliverables/D2/apkqr.png)
-
-## For D3:
 **[Download the grading APK for D3](https://expo.dev/artifacts/eas/yDBSoeRq_DHV07A_PkVaqQOMjscm2JDK-AVscRAHISs.apk)** or scan the QR code below. 
 ![D3 APK download QR code](deliverables/D3/apkqrcode.png)
 
@@ -252,9 +246,7 @@ This license applies only to code owned by the student team. Any pre-existing Sa
 ## Deployed URL / Access Instructions
 
 Open the link in an **incognito/private browser window** to download the APK.
-**[Download the APK for D2](https://expo.dev/accounts/tarunnn65/projects/savi-finance/builds/99a46d44-fec8-4705-8018-f2c5a2bda637)** 
 **[Download the grading APK for D3](https://expo.dev/artifacts/eas/yDBSoeRq_DHV07A_PkVaqQOMjscm2JDK-AVscRAHISs.apk)** or scan the QR code below.
-
 
 See [Instructions for use](#instructions-for-use) above for **Android installation** and **Mac emulator** instructions.
 
