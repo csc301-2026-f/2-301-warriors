@@ -1,6 +1,6 @@
 # 301 Warriors
 
-**NOTE**: the partner’s repo already had a D2 tag pointing to unrelated work, so the submission is tagged 301-warriors-D2. here’s the snapshot link: https://github.com/cheapreats/ce/tree/301-warriors-D2
+**NOTE**: the partner’s repo already had a D3 tag pointing to unrelated work, so the submission is tagged 301-warriors-D3. here’s the snapshot link: https://github.com/cheapreats/ce/releases/tag/301-warriors-D3
 ​
 ## Partner Introduction
 **Partner Organization**: Savi Finance
