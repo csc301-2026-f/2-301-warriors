@@ -98,9 +98,14 @@ The current version of this project supports the following use cases:
 ### 1. Install the app
 
 Open the link in an **incognito/private browser window only**.
-**[Download the grading APK](https://expo.dev/accounts/tarunnn65/projects/savi-finance/builds/99a46d44-fec8-4705-8018-f2c5a2bda637)** or scan the QR code below. 
 
-![APK download QR code](deliverables/D2/apkqr.png)
+## For D2:
+**[Download the grading APK for D2](https://expo.dev/accounts/tarunnn65/projects/savi-finance/builds/99a46d44-fec8-4705-8018-f2c5a2bda637)** or scan the QR code below. 
+![D2 APK download QR code](deliverables/D2/apkqr.png)
+
+## For D3:
+**[Download the grading APK for D3](https://expo.dev/artifacts/eas/yDBSoeRq_DHV07A_PkVaqQOMjscm2JDK-AVscRAHISs.apk)** or scan the QR code below. 
+![D3 APK download QR code](deliverables/D3/apkqrcode.png)
 
 - **Android:** Download and open the `.apk` file, follow the installation prompts, then open Savi Finance.
 - **Mac:** Start an Android emulator through Android Studio’s **Virtual Device Manager**. Drag the downloaded APK onto the **running emulator window**, then open Savi Finance.
@@ -110,8 +115,6 @@ The app opens signed in to a **demo account**. Internet access is required. The 
 ### 2. Open Ask Savi
 
 Select the **Ask Savi** tab at the bottom of the screen.
-
-![home screen](/deliverables/D2/sc1.png)
 
 ### 3. Movie Discovery
 **Use the suggestion chips to test this build.** Manually typed requests currently return the default AI response. Booking and payment are not included.
