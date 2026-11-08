@@ -29,6 +29,8 @@ This required coordinating four interconnected components:
 
 A key design consideration was maintaining consistency between the screening and its associated seat selections. For example, if a user changes showtimes, previously selected seats must be invalidated rather than carried over to a different screening. Backend validation also ensures that submitted seat IDs belong to the correct screening and correspond to selectable seats. These measures help prevent stale or inconsistent booking information from progressing through the workflow.
 
+[Seat selection and booking summary PR](https://github.com/cheapreats/ce/pull/7745)
+
 ### CAPTCHA and Bot-Detection Handling
 
 Another major implementation was CAPTCHA and bot-detection handling in the Cineplex browser automation worker. Previously, when Cineplex presented a human-verification challenge, the worker needed a more reliable way to identify and communicate that automated access had been blocked.
@@ -42,6 +44,8 @@ Additionally, we extended the browser abstraction to support screenshot capture 
 On the frontend, we worked on integrating the CAPTCHA verification flow into the Ask Savi interface. The goal was to allow users to interact with the same browser session used by the worker through a supported handoff mechanism, view and solve CAPTCHA challenges, and receive updates on their status. The interface accounted for pending, completed, failed, and expired states, along with clear error messages and recovery options.
 
 We also worked on connecting challenge status checks and completion commands to the backend so that the original operation could continue after successful verification. Additional considerations included preventing duplicate completion submissions and handling timeouts, cancellations, and interrupted sessions.
+
+[CAPTCHA handling PR](https://github.com/cheapreats/ce/pull/7111)
 
 ### Architectural Changes and Integration Challenges
 
