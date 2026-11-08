@@ -252,6 +252,7 @@ See [Instructions for use](#instructions-for-use) above for **Android installati
 
 This evaluation build is signed in to a **demo account**. Test using the **movie suggestion chips**; manually typed movie requests currently return the default AI response.
 
+## Video walkthrough
 [Watch the D3 app demo on Google Drive](https://drive.google.com/drive/folders/1YgJ7Md3n5PAKQMQkcc001SYnELHp-_mQ)
 
 
