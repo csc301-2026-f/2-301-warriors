@@ -246,9 +246,9 @@ This license applies only to code owned by the student team. Any pre-existing Sa
 ## Deployed URL / Access Instructions
 
 Open the link in an **incognito/private browser window** to download the APK.
-**[Download the grading APK for D3](https://expo.dev/artifacts/eas/yDBSoeRq_DHV07A_PkVaqQOMjscm2JDK-AVscRAHISs.apk)** or scan the QR code below.
+**[Download the grading APK for D3](https://expo.dev/artifacts/eas/yDBSoeRq_DHV07A_PkVaqQOMjscm2JDK-AVscRAHISs.apk)** 
 
-See [Instructions for use](#instructions-for-use) above for **Android installation** and **Mac emulator** instructions.
+See [Instructions for use](#instructions-for-use) above for the scannable APK QR code, **Android installation** and **Mac emulator** instructions.
 
 This evaluation build is signed in to a **demo account**. Test using the **movie suggestion chips**; manually typed movie requests currently return the default AI response.
 
