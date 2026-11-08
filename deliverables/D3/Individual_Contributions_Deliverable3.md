@@ -5,6 +5,7 @@
 - Implemented seat-map extraction and normalized the results into a screening-specific snapshot.
 - Handled unsupported previews and unknown seat availability explicitly.
 - Kept seat-map acquisition separate from ticket submission and provider-side seat selection.
+- Submitted PR # 7745 implementing the seat-map preview and seat selection feature
 
 **Aadya Uniyal**, Backend Seat-map and Selection Integration
 - Extended existing clients and contracts to request seat maps for the correct screening.
