@@ -39,9 +39,11 @@
 - Handled error messaging, timeouts, cancellation, interrupted sessions, and recovery-flow integration with Samaah.
 - Submitted PR #7111 implementing the bot-detection and CAPTCHA challenge-handling functionality.
 
-**Jeremy Chan**, Integration and E2E Testing Lead
-- Prepared the backend/web-scraper end-to-end demonstration requested by Ralph, including JSON extracts at relevant stages.
+**Jeremy Chan**, Backend, Integration and E2E Testing Lead
+- Implemented and integrated live Cineplex seat-map retrieval
 - Demonstrated the connected flow from theatre, movie, and showtime discovery through seat-map extraction and selection-summary generation.
 - Prepared repeatable demonstration commands or scripts using existing tooling, with readable output and no exposed secrets.
 - Verified cross-component integration and relevant CI/build checks.
+- Developed a repeatable live integration test for TA verification, covering discovery, seat retrieval, normalization, and backend validation.
+
 
